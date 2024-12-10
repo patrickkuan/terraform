@@ -1,7 +1,12 @@
 // Simple Linux VM deployment
+data "jenkins_credential" "vcadmin"{
+  id   = "vcenter-admin"
+  type = "username_password" 
+}
+
 provider "vsphere" {
-  user           = "administrator@vsphere.local"
-  password       = "Root@1234"
+  user           = data.jenkins_credential.vcadmin.username
+  password       = data.jenkins_credential.vcadmin.password
   vsphere_server = "192.168.30.10"
 
   # if you have a self-signed cert
