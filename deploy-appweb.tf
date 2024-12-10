@@ -1,8 +1,8 @@
 // Simple Linux VM deployment
 
 provider "vsphere" {
-  user           = "administrator@vsphere.local"
-  password       = "Root@1234"
+  user           = var.tfusername
+  password       = var.tfpassword
   vsphere_server = "192.168.30.10"
 
   # if you have a self-signed cert
