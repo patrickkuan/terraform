@@ -14,7 +14,7 @@ module "app-web" {
   vmtemp       = "rockylinux810"
   vmfolder     = "Automation/Subfolder"
   instances    = 2
-  vmname       = "web"
+  vmname       = "web-app2"
   vmrp         = "devservice/Resources"
   linked_clone = "true"
   network = {
