@@ -1,12 +1,8 @@
 // Simple Linux VM deployment
-withCredentials(
-  [usernamePassword(credentialsId= "vcenter-admin", 
-                    usernameVariable= "USERNAME", 
-                    passwordVariable= "PASSWORD")])
 
 provider "vsphere" {
-  user           = var.USERNAME
-  password       = var.PASSWORD
+  user           = "administrator@vsphere.local"
+  password       = "Root@1234"
   vsphere_server = "192.168.30.10"
 
   # if you have a self-signed cert
@@ -19,7 +15,7 @@ module "app-web" {
   vmtemp       = "rockylinux810"
   vmfolder     = "Automation/Subfolder"
   instances    = 2
-  vmname       = "web-app2"
+  vmname       = "web-app3"
   vmrp         = "devservice/Resources"
   linked_clone = "true"
   network = {
