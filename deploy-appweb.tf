@@ -1,5 +1,10 @@
 // Simple Linux VM deployment
-
+variable "tfusername" {
+  type = string
+}
+variable "tfpassword" {
+  type = string
+}
 provider "vsphere" {
   user           = var.tfusername
   password       = var.tfpassword
