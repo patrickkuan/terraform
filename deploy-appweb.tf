@@ -1,8 +1,8 @@
 // Simple Linux VM deployment
 withCredentials(
-  [usernamePassword(credentialsId: "vcenter-admin", 
-                    usernameVariable: "USERNAME", 
-                    passwordVariable: "PASSWORD")])
+  [usernamePassword(credentialsId= "vcenter-admin", 
+                    usernameVariable= "USERNAME", 
+                    passwordVariable= "PASSWORD")])
 
 provider "vsphere" {
   user           = var.USERNAME
