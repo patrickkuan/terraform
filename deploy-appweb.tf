@@ -21,7 +21,7 @@ module "app-web" {
   vmfolder     = "Automation/Subfolder"
   instances    = 2
   cpu_number     = 4
-  ram_size       = 2
+  ram_size       = 2048
   vmname       = "web-app"
   vmrp         = "devservice/Resources"
   linked_clone = "true"
