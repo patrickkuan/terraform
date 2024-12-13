@@ -20,8 +20,8 @@ module "app-web" {
   vmtemp       = "rockylinux810"
   vmfolder     = "Automation/Subfolder"
   instances    = 2
-  num_cpus     = 4
-  memory       = 2
+  cpu_number     = 4
+  ram_size       = 2
   vmname       = "web-app"
   vmrp         = "devservice/Resources"
   linked_clone = "true"
