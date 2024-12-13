@@ -24,7 +24,7 @@ module "app-web" {
   vmrp         = "devservice/Resources"
   linked_clone = "true"
   network = {
-    "cpom-3508" = ["172.30.50.153", "172.30.50.151"]
+    "cpom-3507" = ["172.30.50.153", "172.30.50.151"]
   }
   #power_state     = "off"
   dns_server_list = ["192.168.30.101", "8.8.8.8"]
