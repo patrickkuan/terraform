@@ -53,8 +53,8 @@ resource "vsphere_virtual_machine" "mysvc1-vm3" {
   name             = "mysvc1-vm3"
   resource_pool_id = data.vsphere_compute_cluster.svcluster1.resource_pool_id
   datastore_id     = data.vsphere_datastore.iscsi-ds.id
-  num_cpus         = 1
-  memory           = 1024
+  num_cpus         = 2
+  memory           = 2048
   guest_id         = data.vsphere_virtual_machine.ubuntu2204-template-upgrade.guest_id
   firmware         = data.vsphere_virtual_machine.ubuntu2204-template-upgrade.firmware
   folder           = "Automation/Subfolder"
@@ -104,6 +104,13 @@ resource "vsphere_virtual_machine" "mysvc1-vm2" {
     size             = data.vsphere_virtual_machine.rockylinux810.disks.0.size
     eagerly_scrub    = false
     thin_provisioned = true
+  }
+  disk {
+    label            = "disk1"
+    size             = 10
+    eagerly_scrub    = false
+    thin_provisioned = true
+    unit_number      = 1
   }
   clone {
     template_uuid = data.vsphere_virtual_machine.rockylinux810.id
